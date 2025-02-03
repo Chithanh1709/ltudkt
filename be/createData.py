@@ -28,6 +28,28 @@ def createCourse():
     if course['leangue']=='English':
         course['level']=random.choice(listLevelEn)
         course['goal']=random
+    elif course['leangue'] == 'Japanese':
+        course['level'] = random.choice(listLevelJa)
+        course['goal'] = random
+    else:
+        course['level'] = random.choice(listLevelKo)
+        course['goal'] = random
+    return course
+def createData():
+    data={}
+    data['name']=createName()
+    data['phone']=createPhone()
+    data['local']=createLocal()
+    data['course']=createCourse()
+    return data
+def createDataList(n):
+    dataList=[]
+    for i in range(n):
+        dataList.append(createData())
+    return dataList
+# print(createDataList(10))
+
+
     
 
         
